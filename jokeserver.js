@@ -24,7 +24,7 @@ app.get('/joke', (req, res) => {
             var body = Buffer.concat(chunks);
             var joke = JSON.parse(body);
             var jokeContent = joke.setup + '\n' + joke.punchline;
-            res.send(`<div>${jokeContent}</div>`);
+            res.json({ jokeContent });
         });
 
         response.on("error", function (error) {
