@@ -1,8 +1,11 @@
 const express = require('express');
 const http = require('http');
+const cors = require('cors');
 const port = 8000;
 
 const app = express();
+
+app.use(cors());
 
 app.get('/joke', (req, res) => {
     var options = {
